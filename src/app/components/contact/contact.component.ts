@@ -433,41 +433,122 @@ interface ContactInfo {
         max-width: none;
       }
     }
-    @media (max-width: 576px) {
-      .contact-info, .contact-form-wrap {
-        padding: 1.2rem;
-      }
-      .contact-info-text {
-        font-size: 0.85rem;
-      }
-      .contact-social-icons {
-        gap: 0.6rem;
-      }
-      .social-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
-      }
-      .form-input {
-        font-size: 16px;
-      }
-      .form-group label {
-        font-size: 0.7rem;
-      }
-      .toast-notification {
-        padding: 1rem 1.2rem;
-        gap: 0.8rem;
-      }
-      .toast-icon {
-        font-size: 1.5rem;
-      }
-      .toast-title {
-        font-size: 0.95rem;
-      }
-      .toast-message {
-        font-size: 0.8rem;
-      }
-    }
+   @media (max-width: 576px) {
+
+  /* Prevent horizontal overflow */
+  .contact-grid,
+  .contact-info,
+  .contact-form-wrap,
+  .contact-form,
+  .form-row,
+  .form-group {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Contact information */
+  .contact-info {
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .contact-info-title {
+    font-size: 1.3rem;
+  }
+
+  .contact-info-text {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  /* Contact items */
+  .contact-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contact-detail {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .contact-value {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Social icons */
+  .contact-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  /* Form container */
+  .contact-form-wrap {
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  /* Form */
+  .contact-form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Two columns -> one column */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Form groups */
+  .form-group {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Inputs */
+  .form-input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Textarea */
+  .form-textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Send button */
+  .form-submit {
+    width: 100%;
+    align-self: stretch;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Toast */
+  .toast-notification {
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    width: auto;
+    max-width: none;
+    box-sizing: border-box;
+  }
+}
   `],
 })
 export class ContactComponent {
